@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.speech.tts.TextToSpeech;
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView textView;
     private TextView textViewDate;
-    Button b1,b2;
+    Button b2;
+    ImageButton b1;
     TextToSpeech t1,t2;
     private Handler handler = new Handler(){
         @Override
@@ -52,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         transparency();
         textView = (TextView) findViewById(R.id.txt);
-        b1 = (Button) findViewById(R.id.button);
+        b1 = (ImageButton) findViewById(R.id.t2s);
                // imageView = (ImageView) findViewById(R.id.background);
         textViewDate = (TextView) findViewById(R.id.date);
         refreshTime();
