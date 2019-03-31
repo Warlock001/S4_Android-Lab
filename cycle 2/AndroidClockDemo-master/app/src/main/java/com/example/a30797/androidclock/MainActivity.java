@@ -1,5 +1,6 @@
 package com.example.a30797.androidclock;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private TextView textViewDate;
     Button b2;
-    ImageButton b1;
+    ImageButton b1,alrmbutton;
     TextToSpeech t1,t2;
     private Handler handler = new Handler(){
         @Override
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         transparency();
         textView = (TextView) findViewById(R.id.txt);
         b1 = (ImageButton) findViewById(R.id.t2s);
+        alrmbutton = (ImageButton) findViewById(R.id.alarmbutton);
                // imageView = (ImageView) findViewById(R.id.background);
         textViewDate = (TextView) findViewById(R.id.date);
         refreshTime();
@@ -88,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
                    // Toast.makeText(getApplicationContext(), texttospeechv, Toast.LENGTH_SHORT).show();
                     t1.speak(texttospeechv, TextToSpeech.QUEUE_FLUSH, null);
                     t2.speak(texttospeechv1, TextToSpeech.QUEUE_FLUSH, null);
+                }
+            });
+
+            alrmbutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MainActivity.this, alarm.class);
+                    startActivity(i);
                 }
             });
 
