@@ -10,7 +10,7 @@
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton"
+        android:text="Audio On"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="222dp" />
 
@@ -18,19 +18,15 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
         android:layout_marginTop="90dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="326dp" />
+        android:text="Show Toggle Status"
+        android:layout_gravity="center" />
 
     <ToggleButton
         android:id="@+id/toggleButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:text="ToggleButton"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="221dp" />
+        android:layout_marginRight="20dp"
+        android:text="ToggleButton" />
 
 </LinearLayout>
