@@ -4,60 +4,83 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.HashSet;
 
 public class MainActivity extends AppCompatActivity {
-
-    EditText edittext1;
-    CheckBox c1,c2,c3;
+    HashSet<String> hash = new HashSet<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        c1=(CheckBox)findViewById(R.id.checkBox);
-        c2=(CheckBox)findViewById(R.id.checkBox2);
-        c3=(CheckBox)findViewById(R.id.checkBox3);
-        edittext1=(EditText)findViewById(R.id.editText1);
+
+        final TextView tv = findViewById(R.id.text);
+
+        final CheckBox chk1 = findViewById(R.id.checkBox1);
+        final CheckBox chk2 = findViewById(R.id.checkBox2);
+        final CheckBox chk3 = findViewById(R.id.checkBox3);
+
+        chk1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    hash.add(chk1.getText().toString());
+                    changeText(tv);
+                }
+                else
+                {
+                    hash.remove(chk1.getText().toString());
+                    changeText(tv);
+                }
+            }
+        });
 
 
-        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-                                          @Override
-                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                                              c2.setChecked(false);
-                                              c3.setChecked(false);
-                                              edittext1.setText("India");
-
-                                          }
-                                      }
-        );
-
-        c2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-                                          @Override
-                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                                              c1.setChecked(false);
-                                              c3.setChecked(false);
-                                              edittext1.setText("Srilanka");
-
-                                          }
-                                      }
-        );
-
-        c3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-                                          @Override
-                                          public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                                              c2.setChecked(false);
-                                              c1.setChecked(false);
-                                              edittext1.setText("Pakistan");
-
-                                          }
-                                      }
-        );
+        chk2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    hash.add(chk2.getText().toString());
+                    changeText(tv);
+                }
+                else
+                {
+                    hash.remove(chk2.getText().toString());
+                    changeText(tv);
+                }
+            }
+        });
 
 
+        chk3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    hash.add(chk3.getText().toString());
+                    changeText(tv);
+                }
+                else
+                {
+                    hash.remove(chk3.getText().toString());
+                    changeText(tv);
+                }
+            }
+        });
 
     }
+
+    private void changeText(TextView tv)
+    {
+
+        tv.setText(hash.toString().replace("[","").replace("]",""));
+    }
 }
+
+
+
+
