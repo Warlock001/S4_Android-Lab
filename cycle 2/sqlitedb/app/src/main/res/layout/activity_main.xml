@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dp"
+        android:text="Employee Details"
+        android:textSize="38sp" />
+
+
+    <EditText
+        android:id="@+id/Id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Employee Id"
+        android:inputType="number"
+        android:maxLength="3" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Employee Name"
+        android:maxLength="25" />
+
+    <EditText
+        android:id="@+id/Salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Employee Salary"
+        android:maxLength="6" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/Insert"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:text="Insert" />
+
+        <Button
+            android:id="@+id/Delete"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:text="Delete" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="55dp"
+            android:text="Update"
+            android:id="@+id/Update"/>
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:text="View"
+            android:id="@+id/View"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="110dp"
+        android:text="View All"
+        android:id="@+id/ViewAll"/>
+
+</LinearLayout>
